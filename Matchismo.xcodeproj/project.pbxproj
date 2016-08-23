@@ -90,6 +90,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78F276981D6C39FD008F8395 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				782BC6891D6B722200798538 /* Card.h */,
+				782BC68A1D6B722200798538 /* Card.m */,
+				782BC68C1D6B724F00798538 /* Deck.h */,
+				782BC68D1D6B724F00798538 /* Deck.m */,
+				785418781D6C216C0085CA4C /* PlayingCard.h */,
+				785418791D6C216C0085CA4C /* PlayingCard.m */,
+				7854187B1D6C2B970085CA4C /* PlayingCardDeck.h */,
+				7854187C1D6C2B970085CA4C /* PlayingCardDeck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		78FD5FD91D6B71B900A2861F = {
 			isa = PBXGroup;
 			children = (
@@ -116,19 +131,12 @@
 				78FD5FE81D6B71B900A2861F /* AppDelegate.h */,
 				78FD5FE91D6B71B900A2861F /* AppDelegate.m */,
 				78FD5FEB1D6B71B900A2861F /* ViewController.h */,
-				782BC6891D6B722200798538 /* Card.h */,
-				782BC68A1D6B722200798538 /* Card.m */,
-				782BC68C1D6B724F00798538 /* Deck.h */,
-				782BC68D1D6B724F00798538 /* Deck.m */,
-				785418781D6C216C0085CA4C /* PlayingCard.h */,
-				785418791D6C216C0085CA4C /* PlayingCard.m */,
-				7854187B1D6C2B970085CA4C /* PlayingCardDeck.h */,
-				7854187C1D6C2B970085CA4C /* PlayingCardDeck.m */,
 				78FD5FEC1D6B71B900A2861F /* ViewController.m */,
 				78FD5FEE1D6B71B900A2861F /* Main.storyboard */,
 				78FD5FF11D6B71B900A2861F /* Assets.xcassets */,
 				78FD5FF31D6B71B900A2861F /* LaunchScreen.storyboard */,
 				78FD5FF61D6B71B900A2861F /* Info.plist */,
+				78F276981D6C39FD008F8395 /* Model */,
 				78FD5FE51D6B71B900A2861F /* Supporting Files */,
 			);
 			path = Matchismo;
@@ -441,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SP.Matchismo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,6 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SP.Matchismo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
