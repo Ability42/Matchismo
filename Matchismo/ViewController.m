@@ -9,18 +9,24 @@
 #import "ViewController.h"
 #import "Deck.h"
 #import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) Deck *deck;
+@property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 @implementation ViewController
 
-- (Deck *) deck
+- (CardMatchingGame *) game
 {
-    if (!_deck) _deck = [self createDeck];
-    return _deck;
+    if (!_game) {
+        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                  usingDeck:[self createDeck]];
+    }
+    return _game;
 }
+
 
 - (Deck *) createDeck
 {
@@ -29,20 +35,13 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
-    if ([sender.currentTitle length]) {
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardBack"]
-                          forState:UIControlStateNormal];
-        [sender setTitle:@"" forState:UIControlStateNormal];
-    } else {
-        Card *randomCard = [self.deck drawRandomCard];
-        if (randomCard) {
-            [sender setBackgroundImage:[UIImage imageNamed:@"cardFront"]
-                              forState:UIControlStateNormal];
-            [sender setTitle:randomCard.contents forState:UIControlStateNormal];
-
-        }
-    }
+    NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender]; //maybe int
+    [self.game chooseCardAtIndex:chosenButtonIndex];
+    [self updateUI];
 }
 
+-(void)updateUI {
+    
+}
 
 @end

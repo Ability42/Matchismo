@@ -79,17 +79,6 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wev-9A-QA2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GnR-11-jbi">
-                                <rect key="frame" x="164" y="125" width="64" height="97"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GQA-2z-NkY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Oev-rd-X1u">
                                 <rect key="frame" x="236" y="125" width="64" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,9 +134,33 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vlQ-TO-oLZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GnR-11-jbi">
+                                <rect key="frame" x="164" y="125" width="64" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" backgroundImage="cardBack">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GQA-2z-NkY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outletCollection property="cardButtons" destination="POG-gH-3o9" id="TGa-Jn-OFd"/>
+                        <outletCollection property="cardButtons" destination="vV4-Ih-CH3" id="9gK-dY-do1"/>
+                        <outletCollection property="cardButtons" destination="nj1-m2-w9d" id="SeR-6G-TcG"/>
+                        <outletCollection property="cardButtons" destination="kSX-rv-8z4" id="zei-tE-6il"/>
+                        <outletCollection property="cardButtons" destination="Oev-rd-X1u" id="v6F-0I-zom"/>
+                        <outletCollection property="cardButtons" destination="GnR-11-jbi" id="MrW-U4-e6f"/>
+                        <outletCollection property="cardButtons" destination="QPq-9c-oyx" id="gS3-oQ-cK5"/>
+                        <outletCollection property="cardButtons" destination="CkL-Ya-obq" id="gAE-sX-O9s"/>
+                        <outletCollection property="cardButtons" destination="tgB-b4-6wj" id="NYz-lB-BUg"/>
+                        <outletCollection property="cardButtons" destination="RZW-OB-WVZ" id="rzE-KQ-nMc"/>
+                        <outletCollection property="cardButtons" destination="KFb-zy-2B5" id="AwW-cs-KzL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
