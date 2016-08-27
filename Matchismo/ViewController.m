@@ -7,13 +7,25 @@
 //
 
 #import "ViewController.h"
+#import "Deck.h"
+#import "PlayingCardDeck.h"
 
 @interface ViewController ()
-
+@property (strong, nonatomic) Deck *deck;
 @end
 
 @implementation ViewController
 
+- (Deck *) deck
+{
+    if (!_deck) _deck = [self createDeck];
+    return _deck;
+}
+
+- (Deck *) createDeck
+{
+    return [[PlayingCardDeck alloc] init];
+}
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
@@ -22,9 +34,13 @@
                           forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
     } else {
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardFront"]
-                          forState:UIControlStateNormal];
-        [sender setTitle:@"A♣️" forState:UIControlStateNormal];
+        Card *randomCard = [self.deck drawRandomCard];
+        if (randomCard) {
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardFront"]
+                              forState:UIControlStateNormal];
+            [sender setTitle:randomCard.contents forState:UIControlStateNormal];
+
+        }
     }
 }
 
