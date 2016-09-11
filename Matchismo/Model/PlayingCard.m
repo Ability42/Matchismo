@@ -8,6 +8,7 @@
 
 #import "PlayingCard.h"
 
+
 @implementation PlayingCard
 
 - (int)match:(NSArray *)otherCards {
@@ -19,6 +20,33 @@
         if (otherCard.rank == self.rank) {
             score = 4;
         } else if ([otherCard.suit isEqualToString:self.suit]) {
+            score = 1;
+        }
+    }
+    if ([otherCards count] == 2) {
+        // compare to 2 another card
+        PlayingCard *firstCard = [otherCards objectAtIndex:0];
+        PlayingCard *secondCard = [otherCards objectAtIndex:1];
+        
+        if (firstCard.rank == secondCard.rank == self.rank) {
+            
+            score = 16;
+            
+        } else if ([firstCard.suit isEqualToString:self.suit] &&
+                   [secondCard.suit isEqualToString:self.suit]) {
+            
+            score = 4;
+            
+        } else if ((firstCard.rank == secondCard.rank) ||
+                   (firstCard.rank == self.rank) ||
+                   (secondCard.rank == self.rank)) {
+            
+            score = 3;
+            
+        } else if ([firstCard.suit isEqualToString:self.suit] ||
+                   [secondCard.suit isEqualToString:self.suit] ||
+                   [firstCard.suit isEqualToString:secondCard.suit]) {
+            
             score = 1;
         }
     }

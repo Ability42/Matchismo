@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		785F9D491D81F63E00C64365 /* PlayingCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785F9D481D81F63E00C64365 /* PlayingCardGameViewController.m */; };
 		787FF1761D71F629009F5F5C /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF16F1D71F629009F5F5C /* Card.m */; };
 		787FF1771D71F629009F5F5C /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF1711D71F629009F5F5C /* Deck.m */; };
 		787FF1781D71F629009F5F5C /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF1731D71F629009F5F5C /* PlayingCard.m */; };
 		787FF1791D71F629009F5F5C /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF1751D71F629009F5F5C /* PlayingCardDeck.m */; };
 		787FF17C1D71F650009F5F5C /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF17B1D71F650009F5F5C /* CardMatchingGame.m */; };
+		78B154DE1D8490DF0070957A /* SecondCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B154DD1D8490DF0070957A /* SecondCardMatchingGame.m */; };
 		78FD5FE71D6B71B900A2861F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FD5FE61D6B71B900A2861F /* main.m */; };
 		78FD5FEA1D6B71B900A2861F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FD5FE91D6B71B900A2861F /* AppDelegate.m */; };
 		78FD5FED1D6B71B900A2861F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FD5FEC1D6B71B900A2861F /* ViewController.m */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		785F9D471D81F63E00C64365 /* PlayingCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardGameViewController.h; sourceTree = "<group>"; };
+		785F9D481D81F63E00C64365 /* PlayingCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardGameViewController.m; sourceTree = "<group>"; };
 		787FF16E1D71F629009F5F5C /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
 		787FF16F1D71F629009F5F5C /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
 		787FF1701D71F629009F5F5C /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		787FF1751D71F629009F5F5C /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		787FF17A1D71F650009F5F5C /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		787FF17B1D71F650009F5F5C /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		78B154DC1D8490DF0070957A /* SecondCardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondCardMatchingGame.h; path = Model/SecondCardMatchingGame.h; sourceTree = "<group>"; };
+		78B154DD1D8490DF0070957A /* SecondCardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondCardMatchingGame.m; path = Model/SecondCardMatchingGame.m; sourceTree = "<group>"; };
 		78FD5FE21D6B71B900A2861F /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FD5FE61D6B71B900A2861F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78FD5FE81D6B71B900A2861F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 				787FF1751D71F629009F5F5C /* PlayingCardDeck.m */,
 				787FF17A1D71F650009F5F5C /* CardMatchingGame.h */,
 				787FF17B1D71F650009F5F5C /* CardMatchingGame.m */,
+				78B154DC1D8490DF0070957A /* SecondCardMatchingGame.h */,
+				78B154DD1D8490DF0070957A /* SecondCardMatchingGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -137,6 +145,8 @@
 				78FD5FE91D6B71B900A2861F /* AppDelegate.m */,
 				78FD5FEB1D6B71B900A2861F /* ViewController.h */,
 				78FD5FEC1D6B71B900A2861F /* ViewController.m */,
+				785F9D471D81F63E00C64365 /* PlayingCardGameViewController.h */,
+				785F9D481D81F63E00C64365 /* PlayingCardGameViewController.m */,
 				78FD5FEE1D6B71B900A2861F /* Main.storyboard */,
 				78FD5FF11D6B71B900A2861F /* Assets.xcassets */,
 				78FD5FF31D6B71B900A2861F /* LaunchScreen.storyboard */,
@@ -311,6 +321,8 @@
 				787FF1791D71F629009F5F5C /* PlayingCardDeck.m in Sources */,
 				78FD5FE71D6B71B900A2861F /* main.m in Sources */,
 				787FF1761D71F629009F5F5C /* Card.m in Sources */,
+				78B154DE1D8490DF0070957A /* SecondCardMatchingGame.m in Sources */,
+				785F9D491D81F63E00C64365 /* PlayingCardGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
