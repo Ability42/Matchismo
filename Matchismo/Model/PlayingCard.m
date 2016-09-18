@@ -15,41 +15,52 @@
     
     int score = 0;
     
-    if ([otherCards count] == 1) {
-        PlayingCard *otherCard = [otherCards firstObject];
+    for (PlayingCard *otherCard in otherCards) {
         if (otherCard.rank == self.rank) {
-            score = 4;
+            score += 4;
         } else if ([otherCard.suit isEqualToString:self.suit]) {
-            score = 1;
+            score += 1;
         }
     }
-    if ([otherCards count] == 2) {
-        // compare to 2 another card
-        PlayingCard *firstCard = [otherCards objectAtIndex:0];
-        PlayingCard *secondCard = [otherCards objectAtIndex:1];
-        
-        if (firstCard.rank == secondCard.rank == self.rank) {
-            
-            score = 16;
-            
-        } else if ([firstCard.suit isEqualToString:self.suit] &&
-                   [secondCard.suit isEqualToString:self.suit]) {
-            
-            score = 4;
-            
-        } else if ((firstCard.rank == secondCard.rank) ||
-                   (firstCard.rank == self.rank) ||
-                   (secondCard.rank == self.rank)) {
-            
-            score = 3;
-            
-        } else if ([firstCard.suit isEqualToString:self.suit] ||
-                   [secondCard.suit isEqualToString:self.suit] ||
-                   [firstCard.suit isEqualToString:secondCard.suit]) {
-            
-            score = 1;
+    
+    /*
+     * Used for comparing the contents of otherCards to match against each other
+     * For Example: in 3 card match, let's assume
+     *      self.rank = J♠
+     *      otherCards = [4♦, 8♦]
+     * In the match test block above J♠ doesn't match either 4♦ or 8♦
+     * But 4♦ matches the suit of 8♦ - the following code block address that
+     */
+    NSMutableArray *otherCardsCollectionForComparison = [otherCards mutableCopy];
+    for (PlayingCard *otherCard in otherCards) {
+        [otherCardsCollectionForComparison removeObject:otherCard];
+        for (PlayingCard *otherCardInOtherCardsColleciton in otherCardsCollectionForComparison) {
+            if (otherCard.rank == otherCardInOtherCardsColleciton.rank) {
+                score += 4;
+            } else if ([otherCard.suit isEqualToString:otherCardInOtherCardsColleciton.suit]) {
+                score += 1;
+            }
         }
     }
+    
+    // Recursive function for matching cards with array of cards
+/*
+    int score = 0;
+    if ([otherCards count] != 0) {
+        if ([otherCards count] == 1) {
+            PlayingCard *otherCard = [otherCards firstObject];
+            if (otherCard.rank == self.rank) {
+                score = 4;
+            } else if ([otherCard.suit isEqualToString:self.suit]) {
+                score = 1;
+            } else {score = 0;}
+        } else {
+            for (Card *otherCard in otherCards) score += [self match:@[otherCard]];
+            PlayingCard *otherCard = [otherCards firstObject];
+            score += [otherCard match:[otherCards subarrayWithRange:NSMakeRange(1, [otherCards count] - 1)]];
+        }
+    }
+*/
     
     return score;
 }

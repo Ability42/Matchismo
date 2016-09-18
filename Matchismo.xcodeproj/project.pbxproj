@@ -13,7 +13,6 @@
 		787FF1781D71F629009F5F5C /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF1731D71F629009F5F5C /* PlayingCard.m */; };
 		787FF1791D71F629009F5F5C /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF1751D71F629009F5F5C /* PlayingCardDeck.m */; };
 		787FF17C1D71F650009F5F5C /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FF17B1D71F650009F5F5C /* CardMatchingGame.m */; };
-		78B154DE1D8490DF0070957A /* SecondCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B154DD1D8490DF0070957A /* SecondCardMatchingGame.m */; };
 		78FD5FE71D6B71B900A2861F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FD5FE61D6B71B900A2861F /* main.m */; };
 		78FD5FEA1D6B71B900A2861F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FD5FE91D6B71B900A2861F /* AppDelegate.m */; };
 		78FD5FED1D6B71B900A2861F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FD5FEC1D6B71B900A2861F /* ViewController.m */; };
@@ -54,8 +53,6 @@
 		787FF1751D71F629009F5F5C /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		787FF17A1D71F650009F5F5C /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		787FF17B1D71F650009F5F5C /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
-		78B154DC1D8490DF0070957A /* SecondCardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondCardMatchingGame.h; path = Model/SecondCardMatchingGame.h; sourceTree = "<group>"; };
-		78B154DD1D8490DF0070957A /* SecondCardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondCardMatchingGame.m; path = Model/SecondCardMatchingGame.m; sourceTree = "<group>"; };
 		78FD5FE21D6B71B900A2861F /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FD5FE61D6B71B900A2861F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78FD5FE81D6B71B900A2861F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,8 +109,6 @@
 				787FF1751D71F629009F5F5C /* PlayingCardDeck.m */,
 				787FF17A1D71F650009F5F5C /* CardMatchingGame.h */,
 				787FF17B1D71F650009F5F5C /* CardMatchingGame.m */,
-				78B154DC1D8490DF0070957A /* SecondCardMatchingGame.h */,
-				78B154DD1D8490DF0070957A /* SecondCardMatchingGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,7 +240,7 @@
 		78FD5FDA1D6B71B900A2861F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Stepan Paholyk";
 				TargetAttributes = {
 					78FD5FE11D6B71B900A2861F = {
@@ -321,7 +316,6 @@
 				787FF1791D71F629009F5F5C /* PlayingCardDeck.m in Sources */,
 				78FD5FE71D6B71B900A2861F /* main.m in Sources */,
 				787FF1761D71F629009F5F5C /* Card.m in Sources */,
-				78B154DE1D8490DF0070957A /* SecondCardMatchingGame.m in Sources */,
 				785F9D491D81F63E00C64365 /* PlayingCardGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,8 +385,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -435,8 +431,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

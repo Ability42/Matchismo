@@ -8,48 +8,74 @@
 
 #import "ViewController.h"
 #import "CardMatchingGame.h"
-#import "SecondCardMatchingGame.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UIButton *redialCardsButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeControl;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *gameMode;
+@property (weak, nonatomic) IBOutlet UILabel *messageBox;
+
+@property (nonatomic) NSInteger numberOfCardsToPlayWith;
 @end
 
 @implementation ViewController
 
 - (CardMatchingGame *) game
 {
+    
     if (!_game) {
-        if ([self.gameMode isOn]) {
-            // 2 match mod
-            _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                                      usingDeck:[self createDeck]];
-        } else if (![self.gameMode isOn]) {
-            // 3 match mode
-            _game = [[SecondCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                                            usingDeck:[self createDeck]];
-        }
+        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                  usingDeck:[self createDeck]
+                                         andCardsToPlayWith:self.numberOfCardsToPlayWith];
     }
     return _game;
 
 }
+
+- (NSInteger)numberOfCardsToPlayWith
+{
+    if (!_numberOfCardsToPlayWith) _numberOfCardsToPlayWith = 2;
+    return _numberOfCardsToPlayWith;
+}
+
+- (IBAction)chooseGameMode:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 1) {
+        self.numberOfCardsToPlayWith = 3;
+        [self.messageBox setText:@"Mode: 3 match"];
+    } else {
+        self.numberOfCardsToPlayWith = 2;
+        [self.messageBox setText:@"Mode: 2 match"];
+    }
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                  usingDeck:[self createDeck]
+                                         andCardsToPlayWith:self.numberOfCardsToPlayWith];// maybe 
+}
+
 
 - (Deck *) createDeck
 {
     return nil;
 }
 
+
 - (IBAction)touchCardButton:(UIButton *)sender
 {
+    if (self.gameModeControl.enabled)  {
+       self.gameModeControl.enabled = NO;
+    }
+    
     NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
 }
 
+
 - (void)updateUI
 {
+    //NSLog(@"NUMBERS OF CARDS TO PLAY WITH:%ld", (long)self.cardsToPlayWith);
     for (UIButton *cardButton in self.cardButtons) {
         NSUInteger index = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:index];
@@ -63,14 +89,11 @@
 
 - (IBAction)redialCrards:(UIButton *)sender
 {
-    self.scoreLabel.text = @"You start's a new game!";
-    self.game = nil;
-    for (UIButton *cardButton in self.cardButtons) {
-        [cardButton setTitle:@"" forState:UIControlStateNormal];
-        [cardButton setBackgroundImage:[UIImage imageNamed:@"cardBack"] forState:UIControlStateNormal];
-        cardButton.enabled = YES;
-    }
-    [self game];
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                  usingDeck:[self createDeck]
+                                         andCardsToPlayWith:self.numberOfCardsToPlayWith];
+    if (!self.gameModeControl.enabled) self.gameModeControl.enabled = YES;
+    [self updateUI];
 }
 
 
