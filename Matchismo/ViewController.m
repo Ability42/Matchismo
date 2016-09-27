@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CardMatchingGame.h"
+#import "PlayingCardDeck.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
@@ -55,11 +56,34 @@
 }
 
 
-- (Deck *) createDeck
-{
-    return nil;
+- (Deck*) createDeck {
+    return [[PlayingCardDeck alloc] init];
 }
 
+- (IBAction)redealCardsAlert:(UIButton *)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Matchismo"
+                                                                   message:@"Are you sure to redial cards?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    [self redialCards];
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"No"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   //Handle no, thanks button
+                               }];
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
@@ -87,7 +111,7 @@
 }
 
 
-- (IBAction)redialCrards:(UIButton *)sender
+- (void)redialCards
 {
     self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]
@@ -95,7 +119,6 @@
     if (!self.gameModeControl.enabled) self.gameModeControl.enabled = YES;
     [self updateUI];
 }
-
 
 
 - (NSString *)titleForCard:(Card *)card
