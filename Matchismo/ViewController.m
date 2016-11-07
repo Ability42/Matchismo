@@ -14,15 +14,19 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UIButton *redialCardsButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeControl;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *messageBox;
+
+@property (weak, nonatomic) IBOutlet UILabel *flipResult;
 
 @property (nonatomic) NSInteger numberOfCardsToPlayWith;
 @end
 
 @implementation ViewController
+
+
+#pragma mark - Lazy
 
 - (CardMatchingGame *) game
 {
@@ -42,6 +46,8 @@
     return _numberOfCardsToPlayWith;
 }
 
+#pragma mark - IBActions
+
 - (IBAction)chooseGameMode:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 1) {
         self.numberOfCardsToPlayWith = 3;
@@ -59,6 +65,7 @@
 - (Deck*) createDeck {
     return [[PlayingCardDeck alloc] init];
 }
+
 
 - (IBAction)redealCardsAlert:(UIButton *)sender
 {
@@ -96,6 +103,7 @@
     [self updateUI];
 }
 
+#pragma mark - UpdateUI
 
 - (void)updateUI
 {
@@ -108,8 +116,11 @@
         cardButton.enabled = !card.isMatched;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
+    
+//    self.flipResult.text = 
 }
 
+#pragma mark - Card Staff
 
 - (void)redialCards
 {

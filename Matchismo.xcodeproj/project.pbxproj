@@ -245,6 +245,7 @@
 				TargetAttributes = {
 					78FD5FE11D6B71B900A2861F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZW9JWEU2NM;
 					};
 					78FD5FFA1D6B71B900A2861F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -252,6 +253,7 @@
 					};
 					78FD60051D6B71B900A2861F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZW9JWEU2NM;
 						TestTargetID = 78FD5FE11D6B71B900A2861F;
 					};
 				};
@@ -461,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZW9JWEU2NM;
 				INFOPLIST_FILE = Matchismo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SP.Matchismo;
@@ -473,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZW9JWEU2NM;
 				INFOPLIST_FILE = Matchismo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SP.Matchismo;
@@ -508,6 +512,7 @@
 		78FD60161D6B71B900A2861F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = ZW9JWEU2NM;
 				INFOPLIST_FILE = MatchismoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SP.MatchismoUITests;
@@ -519,6 +524,7 @@
 		78FD60171D6B71B900A2861F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = ZW9JWEU2NM;
 				INFOPLIST_FILE = MatchismoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SP.MatchismoUITests;

@@ -18,6 +18,7 @@ static const int COST_TO_CHOOSE = 1;
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, assign) NSInteger numberOfCardsToPlayWith;
+@property (nonatomic) NSMutableString *flipResult;
 @end
 
 @implementation CardMatchingGame
@@ -64,15 +65,21 @@ static const int COST_TO_CHOOSE = 1;
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
+    if (!card.isChosen) {
+        NSLog(@"You choose %@", card.contents); //
+    }
+
     
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
+            NSLog(@"You unchoose %@", card.contents);
+            
         } else {
             // match against other card
-            NSMutableArray *currentChosenCards = [[NSMutableArray alloc] init];
+            NSArray *currentChosenCards = [[NSMutableArray alloc] init];
             for (Card *otherCard in self.cards) {
-                NSLog(@"INSIDE 1-st for loop");
+
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     [currentChosenCards addObject:otherCard];
                 }
@@ -82,15 +89,15 @@ static const int COST_TO_CHOOSE = 1;
                 if (matchScore) {
                     self.score += matchScore * MATCH_BONUS;
                     for (Card *otherCard in currentChosenCards) {
-                        NSLog(@"INSIDE 2-nd  LOOP");
                         otherCard.matched = YES;
                     }
                     card.matched = YES;
+
                 } else {
+                    NSLog(@"Didn't matched cards");
                     self.score -= MISMATCH_PENALTY;
                     for (Card *otherCard in currentChosenCards) {
                         otherCard.chosen = NO;
-                        NSLog(@"INSIDE 3-rd loop");
                     }
                 }
             }
